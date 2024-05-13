@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { FitList } from "./components/FitList.jsx";
+import { Zall } from "./components/Zall.jsx"
+import { Entertain } from "./components/Entertain.jsx";
+import { Gallery } from "./components/Gallery.jsx"
+import { Otsov} from "./components/Otsov.jsx";
+import { Bron } from "./components/Bron.jsx";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <FitList />,
+  },
+  {
+    path: "/zall",
+    element: <Zall />,
+  },
+  {
+    path: "/entertain",
+    element: <Entertain />,
+  },
+  {
+    path: "/gallery",
+    element: <Gallery />,
+  },
+  {
+    path: "/otsov",
+    element: <Otsov />,
+  },
+  {
+    path: "/bron",
+    element: <Bron />,
+  },
+]);
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <RouterProvider router={router} />
+    </>
   );
 }
 
